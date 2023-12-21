@@ -1,8 +1,7 @@
-def linsearch(array):
-
+def linsearch(array, number):
 
     count = 0
-    search = int(input("enter a number "))
+    search = number
 
     for i in range(1, len(array)):
        if search == array[i]:
@@ -13,8 +12,7 @@ def linsearch(array):
        print("item not found in list")
 
 array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-linsearch(array)
-
+linsearch(array, 5)
 
 # A linear search is the simplest approach employed to search for an element in a data set.
 # It examines each element until it finds a match, starting at the beginning of the data
