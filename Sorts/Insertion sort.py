@@ -1,14 +1,9 @@
 def insertsort(list):
-
-
-    sorted = 0 
-
-    for count in range(0, len(list)):
-        index = count
-
-        while list[index - 1] > list[index] and index > 0:
-            list[index], list[index - 1] = list[index - 1], list[index]
-            index = index - 1
+    for x in range(len(list)):
+        sorting = x
+        while sorting > 0 and list[sorting] < list[sorting - 1]:
+            list[sorting], list[sorting - 1] = list[sorting - 1], list[sorting]
+            sorting -= 1
 
 list = [-2, 2, 4, 6, 0, 8, 12, -3]
 insertsort(list)
