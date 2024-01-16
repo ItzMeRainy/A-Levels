@@ -1,6 +1,5 @@
 def bubblesort(list):
 
-    
     swaps = False
 
     for i in range(0, len(list)-1):
