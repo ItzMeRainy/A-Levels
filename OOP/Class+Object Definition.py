@@ -1,7 +1,7 @@
 # Create Class for student.
 class Student:
 
-    # Initialize attributes for object.
+    # Initialize attributes for object (Known as Constructor).
     def __init__(self, firstname, lastname, age, subjects):
         self.firstname = firstname
         self.lastname = lastname
