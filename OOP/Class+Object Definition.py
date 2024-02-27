@@ -21,7 +21,7 @@ class Student:
         self.age = new_age
 
 # Created Object, in this case for student (An object is an instance of the class).
-Student_1 = Student("Rayyan", "Yasir", "19", ["Math", "Computer Science","Economics"])
+Student_1 = Student("Rayyan", "Yasir", "19", ["Math", "Computer Science", "Economics"])
 
 # Calling defined method.
 Student_1.GetFirstName()
