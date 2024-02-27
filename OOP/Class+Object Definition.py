@@ -8,7 +8,7 @@ class Student:
         self.age = age
         self.subjects = subjects
 
-    # Getter for First Name attribute.
+    # Method for First Name attribute.
     def GetFirstName(self):
         print(f"This student's first name is \"{self.firstname}\"") # This will output the object's attribute.
 
