@@ -1,9 +1,9 @@
-Stack = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] # 10 element stack, defined and initialized.
-StackPointer = 0 # Pointer set to start of stack. Increments for every element added.
+Stack = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]                     # 10 element stack, defined and initialized.
+StackPointer = 0                                           # Pointer set to start of stack. Increments for every element added.
 
 # Procedure to add number to stack.
 def AddToStack():
-    global StackPointer # Make sure stackpointer is set to global inside function/method.
+    global StackPointer                                    # Make sure stackpointer is set to global inside function/method.
     num = int(input("Enter a number to add: "))
     if StackPointer <= 9:
         Stack[StackPointer] = num

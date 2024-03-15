@@ -1,8 +1,8 @@
-Queue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] # 10 element queue, defined and initialized.
-QueueLength = len(Queue) # Assigned to see how many spaces are available in queue.
-TailPointer = 0 # Elements added are sent to the back or the tail of the queue.
-HeadPointer = 0 # Elements removed are dequeued from the beginning or head of the queue.
-Entries = 0 # Represents total number of elements currently present in queue.
+Queue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]                 # 10 element queue, defined and initialized.
+QueueLength = len(Queue)                               # Assigned to see how many spaces are available in queue.
+TailPointer = 0                                        # Elements added are sent to the back or the tail of the queue.
+HeadPointer = 0                                        # Elements removed are dequeued from the beginning or head of the queue.
+Entries = 0                                            # Represents total number of elements currently present in queue.
 
 # Procedure to add number to queue.
 def Enqueue():
