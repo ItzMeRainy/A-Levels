@@ -8,7 +8,7 @@ def binarysearch(array, number):
         if array[middle] < number:
             low = middle + 1
         else:
-            high = middle
+            high = middle - 1
     print(f"number \"{number}\" found at index \"{low}\"")
     return low
 
