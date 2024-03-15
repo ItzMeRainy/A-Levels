@@ -51,7 +51,7 @@ class LinkedList:
     # Delete method to remove node at given index.
     def Delete(self, index):
         # Case for outside index range.
-        if index > self.LengthLinkedList():
+        if index > self.LengthLinkedList() or index < 0:
             print("Error: Index outside list")
 
         # Case for first index: Replace headpointer with second Node in list.
