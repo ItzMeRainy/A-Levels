@@ -51,7 +51,7 @@ class LinkedList:
     # Delete method to remove node at given index.
     def Delete(self, index):
         # Case for outside index range.
-        if index > self.LengthLinkedList() or index < 0:
+        if index > self.LengthLinkedList() or index < 1:
             print("Error: Index outside list")
 
         # Case for first index: Replace headpointer with second Node in list.
@@ -67,5 +67,33 @@ class LinkedList:
                 TempNode = CurrentNode
                 CurrentNode = CurrentNode.next
                 CurrentIndex += 1
+
             TempNode.next = CurrentNode.next
             CurrentNode= None
+
+    # Insert method to add node at given index.
+    def Insert(self, index, value):
+        NewNode = ListNode(value)
+
+        # Case for outside index range.
+        if index > self.LengthLinkedList() + 1 or index < 1:
+            print("Error: Index outside list")
+
+        # Case for first index: Make NewNode the new head of the list.
+        elif index == 1:
+            TempNode = self.head
+            self.head = NewNode
+            self.head.next = TempNode
+
+        # Case for all other indices: Add new node in front of the node at index and link the rest to NewNode
+        elif index > 1:
+            CurrentNode = self.head
+            CurrentIndex = 0
+
+            while CurrentIndex < index - 1:
+                TempNode = CurrentNode
+                CurrentNode = CurrentNode.next
+                CurrentIndex += 1
+
+            TempNode.next = NewNode
+            NewNode.next = CurrentNode
