@@ -97,3 +97,21 @@ class LinkedList:
 
             TempNode.next = NewNode
             NewNode.next = CurrentNode
+
+    def Search(self, value):
+        CurrentNode = self.head
+        CurrentIndex = 0
+
+        if value == CurrentNode.value:
+            print(f"Found '{value}' at index: {CurrentIndex + 1}")
+            return
+        
+        else:
+            while CurrentNode.next != None:
+                CurrentNode = CurrentNode.next
+                CurrentIndex += 1
+                if value == CurrentNode.value:
+                    print(f"Found '{value}' at index: {CurrentIndex + 1}")
+                    return
+                
+        print("Searched value not found in List")
