@@ -98,20 +98,24 @@ class LinkedList:
             TempNode.next = NewNode
             NewNode.next = CurrentNode
 
+    # Search method to find index of value passed to the method (You can also set it to return the index using "return CurrentIndex").
     def Search(self, value):
         CurrentNode = self.head
         CurrentIndex = 0
 
+        # Case for if value is at first index.
         if value == CurrentNode.value:
             print(f"Found '{value}' at index: {CurrentIndex + 1}")
             return
         
+        # Case for all other indices.
         else:
             while CurrentNode.next != None:
-                CurrentNode = CurrentNode.next
+                CurrentNode = CurrentNode.next # Use this for traversal of list instead of the code I used in the other methods.
                 CurrentIndex += 1
                 if value == CurrentNode.value:
                     print(f"Found '{value}' at index: {CurrentIndex + 1}")
                     return
                 
+        # Case for if value does not exist in list.
         print("Searched value not found in List")
