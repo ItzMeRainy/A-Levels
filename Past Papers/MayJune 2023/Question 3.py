@@ -23,6 +23,7 @@ class Employee():
 
         return TotalPay
     
+
 class Manager(Employee):
     #BonusValue single
 
@@ -34,7 +35,38 @@ class Manager(Employee):
         Hours = Hours * (1 + self.__BonusValue / 100) 
         super().SetPay(WeekNum, Hours)
 
-EmployeeArray = []
 
-with open("D:\Coding\Repos\A-Levels\Past Papers\MayJune 2023\Papers\Employees.txt", "w"):
-    pass
+# Main
+        
+try:
+    EmployeeArray = []
+
+    with open("D:\Coding\Repos\A-Levels\Past Papers\MayJune 2023\Papers\Employees.txt", "r") as File:
+        Lines = File.readlines()
+        StrippedList = [line.rstrip("\n") for line in Lines]
+
+    index = 0
+
+    Pay = 0.0
+    EmployeeNum = ""
+    JobTitle = ""
+    BonusValue = ""
+
+    for Worker in range(8):
+        Pay = StrippedList[index]
+        index += 1
+        EmployeeNum = StrippedList[index]
+        Temp = StrippedList[index]
+
+        try:
+            JobTitle = Temp
+            EmployeeArray.append(Employee(Pay, EmployeeNum, JobTitle))
+        except:
+            BonusValue = Temp
+            JobTitle = StrippedList[index]
+            index += 1
+    
+except IOError:
+    print("File Not Found")
+
+print(len(EmployeeArray))
