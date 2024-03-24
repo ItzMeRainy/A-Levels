@@ -5,7 +5,7 @@ class BinaryTreeNode():
         self.right = right
     
     def __repr__(self):
-        return f"{self.left} <- {self.value} -> {self.right}"
+        return f"{self.left} <- {self.data} -> {self.right}"
 
     def Insert(self, value):
         if self.data:
@@ -21,7 +21,7 @@ class BinaryTreeNode():
                     self.left = BinaryTreeNode(value)
                 else:
                     self.left.Insert(value)
-            
+          
         else: 
             self.data = value
 
