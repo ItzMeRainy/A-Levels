@@ -36,5 +36,5 @@ class Manager(Employee):
 
 EmployeeArray = []
 
-with open("Repos\A-Levels\Past Papers\9618_s23_sf_42\06_9618_42_2023_source_files\Employees.txt", "w"):
+with open("D:\Coding\Repos\A-Levels\Past Papers\MayJune 2023\Papers\Employees.txt", "w"):
     pass
