@@ -20,7 +20,7 @@ class BinaryTreeNode():
                 if self.left == None:
                     self.left = BinaryTreeNode(value)
                 else:
-                    self.right.Insert(value)
+                    self.left.Insert(value)
             
         else: 
             self.data = value
