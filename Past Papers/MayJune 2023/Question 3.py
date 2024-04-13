@@ -1,3 +1,4 @@
+# Part a)
 class Employee():
     #self.__HourlyPay single 
     #self.__EmployeeNumber string 
@@ -23,7 +24,7 @@ class Employee():
 
         return TotalPay
     
-
+# Part b)
 class Manager(Employee):
     #BonusValue single
 
@@ -36,8 +37,7 @@ class Manager(Employee):
         super().SetPay(WeekNum, Hours)
 
 
-# Main
-        
+# Part c)     
 try:
     EmployeeArray = []
 
@@ -69,4 +69,4 @@ try:
 except IOError:
     print("File Not Found")
 
-print(len(EmployeeArray))
+# Part d)
