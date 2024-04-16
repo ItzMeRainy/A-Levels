@@ -34,8 +34,35 @@ class Manager(Employee):
 
     def SetPay(self, WeekNum, HoursWorked):
         Hours = HoursWorked * (1 + self.__BonusValue / 100) 
+        Hours = HoursWorked * (1 + self.__BonusValue / 100) 
         super().SetPay(WeekNum, Hours)
 
+# Part c)
+EmployeeArray = []   
+Pay = 0.00 
+ID = "" 
+Bonus = 0.00 
+Title = "" 
+Temp = "" 
+try: 
+  TextFile = "Repos/A-Levels/Past Papers/May-June 42 2023/Papers/Employees.txt" 
+  File = open(TextFile, 'r') 
+  for x in range(0, 8): 
+    Pay = float(File.readline()) 
+    ID = File.readline() 
+    Temp = File.readline() 
+
+    try:   
+        Bonus = float(Temp) 
+        Title = File.readline() 
+        EmployeeArray.append(Manager(Pay, ID, Title, Bonus)) 
+    except: 
+          Title = Temp 
+          EmployeeArray.append(Employee(Pay, ID, Title))
+    File.close
+
+except IOError: 
+    print("Could not find file")
 # Part c)
 EmployeeArray = []   
 Pay = 0.00 
