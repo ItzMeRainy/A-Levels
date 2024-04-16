@@ -33,40 +33,45 @@ class Manager(Employee):
         self.__BonusValue = BonusValue
 
     def SetPay(self, WeekNum, HoursWorked):
-        Hours = Hours * (1 + self.__BonusValue / 100) 
+        Hours = HoursWorked * (1 + self.__BonusValue / 100) 
         super().SetPay(WeekNum, Hours)
 
+# Part c)
+EmployeeArray = []   
+Pay = 0.00 
+ID = "" 
+Bonus = 0.00 
+Title = "" 
+Temp = "" 
+try: 
+  TextFile = "Repos/A-Levels/Past Papers/May-June 42 2023/Papers/Employees.txt" 
+  File = open(TextFile, 'r') 
+  for x in range(0, 8): 
+    Pay = float(File.readline()) 
+    ID = File.readline() 
+    Temp = File.readline() 
 
-# Part c)     
-try:
-    EmployeeArray = []
+    try:   
+        Bonus = float(Temp) 
+        Title = File.readline() 
+        EmployeeArray.append(Manager(Pay, ID, Title, Bonus)) 
+    except: 
+          Title = Temp 
+          EmployeeArray.append(Employee(Pay, ID, Title))
+    File.close
 
-    with open("D:\Coding\Repos\A-Levels\Past Papers\MayJune 2023\Papers\Employees.txt", "r") as File:
-        Lines = File.readlines()
-        StrippedList = [line.rstrip("\n") for line in Lines]
-
-    index = 0
-
-    Pay = 0.0
-    EmployeeNum = ""
-    JobTitle = ""
-    BonusValue = ""
-
-    for Worker in range(8):
-        Pay = StrippedList[index]
-        index += 1
-        EmployeeNum = StrippedList[index]
-        Temp = StrippedList[index]
-
-        try:
-            JobTitle = Temp
-            EmployeeArray.append(Employee(Pay, EmployeeNum, JobTitle))
-        except:
-            BonusValue = Temp
-            JobTitle = StrippedList[index]
-            index += 1
-    
-except IOError:
-    print("File Not Found")
+except IOError: 
+    print("Could not find file")
 
 # Part d)
+def EnterHours():
+    with open('Repos\A-Levels\Past Papers\May-June 42 2023\Papers\HoursWeek1.txt', 'r') as Doc:
+        for Person in EmployeeArray:
+            EmployeeID = Doc.readline()
+            for x in range(8):
+                if EmployeeArray[x].GetEmployeeNumber() == EmployeeID:
+                    Person.SetPay(1, float(Doc.readline()))
+
+EnterHours()
+for Worker in EmployeeArray:
+    print(Worker.GetEmployeeNumber(), Worker.GetTotalPay()
