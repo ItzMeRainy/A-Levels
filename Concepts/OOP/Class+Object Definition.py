@@ -5,7 +5,8 @@ class Student:
     def __init__(self, firstname, lastname, age, subjects):
         self.firstname = firstname
         self.lastname = lastname
-        self.age = age
+        # Attributes with a dunder or "double underscore" are private attributes and can only be accessed using a getter.
+        self.__age = age
         self.subjects = subjects
 
     # Method for First Name attribute.
@@ -14,7 +15,7 @@ class Student:
 
     # Getter for Age attribute.
     def GetAge(self):
-        return int(self.age)
+        return int(self.__age)
 
     # Setter for Age attribute.
     def SetAge(self, new_age):
@@ -26,6 +27,6 @@ Student_1 = Student("Rayyan", "Yasir", "19", ["Math", "Computer Science", "Econo
 # Calling defined method.
 Student_1.GetFirstName()
 
-# Using Age methods to increase Student's age by 1 year
+# Using Age methods to increase Student's age by 1 year (Note how I did not use Student_1.__age because it is private.)
 Student_1.SetAge(Student_1.GetAge() + 1)
 print(f"This student's age is now: {Student_1.GetAge()}")

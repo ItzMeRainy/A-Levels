@@ -1,10 +1,8 @@
 def bubblesort(list):
+    for i in range(len(list)-1):                                           #No. of max iterations to be done
+        swaps = False                                                         #This flag makes code stop the second no switch has occured
 
-    swaps = False                                                             #This flag makes code stop the second no switch has occured
-
-    for i in range(0, len(list)-1):                                           #No. of max iterations to be done
-        for j in range(0, len(list)-1):                                       #This loop Compares every two adjacent values  
-
+        for j in range(len(list)-1):                                       #This loop Compares every two adjacent values  
             if list[j] > list[j+1]:                                           #Swap
                 swaps = True                                                  #Swap
                 list[j], list[j+1] = list[j+1], list[j]                       #Swap

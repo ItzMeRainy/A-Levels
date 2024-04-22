@@ -42,3 +42,14 @@ class Fish(Animal):
 class Reptile(Animal):
     def __init__(self, species, habitat, color):
         Animal.__init__(species, habitat, color)
+
+'''
+super().ExampleFunction(ExampleParameter, ExampleParameter) copies the code from inside the parents similarly named function (in this case it would be named ExampleFunction) and runs it for the child class.
+
+You can also add more code after calling the super method. As an example, we will add the size of the Finch to the Finch class. 
+'''
+
+class SizedFinch(Finch):
+    def __init__(self, name, habitat, color, size):
+        super().__init__(name, habitat, color)
+        self.size = size
