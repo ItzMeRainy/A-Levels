@@ -46,8 +46,44 @@ class BinaryTreeNode():
         else:
             print("Tree Is Empty")
 
-    def PostOrderTraversal():
-        pass
+    # Left, Data , Right
+    def PreOrderTraversal(self):
+        Result = []
 
-    def PreOrderTraversal():
-        pass
+        if self.left:
+            self.left.PreOrderTraversal()
+
+        Result.append(self.data)
+
+        if self.right():
+            self.right.PreOrderTraversal()
+
+        return Result
+
+    # Data, Left, Right
+    def InOrderTraversal(self):
+        Result = []
+
+        Result.append(self.data)
+
+        if self.left:
+            self.right.InOrderTraversal()
+
+        if self.right:
+            self.right.InOrderTraversal()
+
+        return Result
+
+    # Right, Data, Left
+    def PostOrderTraversal(self):
+        Result = []
+
+        if self.right:
+            self.right.PostOrderTraversal()
+
+        Result.append(self.data)
+
+        if self.left:
+            self.left.PostOrderTraversal()
+
+        return Result
