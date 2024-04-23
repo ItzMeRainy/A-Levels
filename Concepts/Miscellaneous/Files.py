@@ -29,7 +29,7 @@ except FileNotFoundError or IOError:
     print("File Not Found.")
 
 '''
-There are multiple ways to read data from a file.
+There are multiple ways to read data from a file. (Keep in mind when reading from a file, everything is returned as a string with a newline "\n")
 
 1. Doc.readline() ---> This will read a single line from the file and return it.
 
