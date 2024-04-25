@@ -1,16 +1,19 @@
 def binarysearch(array, number):
 
     low = 0
-    high = len(array)
+    high = len(array) - 1
 
-    while low < high:
-        middle = (high + low) // 2
-        if array[middle] < number:
-            low = middle + 1
-        else:
+    while low <= high:
+        middle = (low + high) // 2
+
+        if array[middle] == number:
+            return f"Number found at index: {middle}"
+        elif number < array[middle]:
             high = middle - 1
-    print(f"number \"{number}\" found at index \"{low}\"")
-    return low
+        else:
+            low = middle + 1
+    
+    return f"Number Not Found."
 
 mylist = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-binarysearch(mylist, 4)
+print(binarysearch(mylist, 4))
