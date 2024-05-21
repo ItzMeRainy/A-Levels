@@ -8,9 +8,9 @@ Entries = 0                                            # Represents total number
 def Enqueue():
     global TailPointer, Entries
     num = int(input("Enter number to add: "))
-    if TailPointer >= QueueLength - 1:
-        TailPointer = 0
-    if Entries < QueueLength - 1:
+    if Entries < QueueLength:
+        if TailPointer >= QueueLength:
+            TailPointer = 0
         Queue[TailPointer] = num
         TailPointer += 1
         Entries += 1
@@ -20,9 +20,9 @@ def Enqueue():
 # Procedure to remove number from queue.
 def Dequeue():
     global HeadPointer, Entries
-    if HeadPointer >= QueueLength - 1:
-        HeadPointer = 0
     if Entries > 0:
+        if HeadPointer >= QueueLength:
+            HeadPointer = 0
         Queue[HeadPointer] = 0
         HeadPointer += 1
         Entries -= 1
@@ -30,3 +30,5 @@ def Dequeue():
         print("Queue is Empty")
 
 # Note: This queue is circular.
+
+print(Queue)
