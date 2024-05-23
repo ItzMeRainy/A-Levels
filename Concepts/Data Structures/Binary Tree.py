@@ -67,7 +67,7 @@ class BinaryTreeNode():
         Result.append(self.data)
 
         if self.left:
-            self.right.PreOrderTraversal()
+            self.left.PreOrderTraversal()
 
         if self.right:
             self.right.PreOrderTraversal()
